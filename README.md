@@ -28,11 +28,15 @@ The landing page for **Pragmtk Limited**.
 
 ## Overview
 
-The site is a single static page (`index.html`) that shows the Pragmtk logo in the centre of the viewport. There is no build step, framework or dependency; the logo is inline SVG and the styles are in the page.
+The site is two static pages, `index.html` (the home page: the studio, its products and contact details) and `privacy.html` (the privacy policy). There is no build step, framework or dependency.
+
+- `css/site.css` – shared styles for both pages.
+- `js/hover-effect.js` – the home page's hover effect: hovering one of the large words shows an image that follows the cursor with an RGB-shift distortion (plain WebGL). A word with `data-image` shows that image (Budj uses `img/budj.jpg`, a greyscale app screenshot); one with `data-art` shows artwork drawn in code in the brand colours (Bateleur, until it has a screenshot). The effect is skipped on touch screens and when reduced motion is requested.
+- `fonts/` – [Le Murmure](https://velvetyne.fr/fonts/le-murmure/) by Jérémy Landes / Velvetyne, used under the SIL Open Font License (`fonts/LeMurmure-OFL.txt`).
 
 ## Running locally
 
-Open `index.html` in a browser, or serve the folder with Node.js:
+Serve the folder with Node.js (the pages use root-relative paths, so opening the file directly won't load the styles):
 
 ```sh
 npx serve -l 8000
@@ -50,7 +54,7 @@ Then visit <http://localhost:8000>.
 
 ## Deployment
 
-Upload `index.html` to any static host. The page loads nothing from other servers.
+Upload the whole folder to any static host. The pages load nothing from other servers.
 
 ---
 
