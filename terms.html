@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/js/analytics.js"></script>
   <title>Terms of use | Pragmtk</title>
   <meta name="description" content="Terms of use for the Pragmtk website." />
   <link rel="canonical" href="https://pragmtk.com/terms" />
@@ -10,6 +11,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RRSHWZB0J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7RRSHWZB0J');
+  </script>
 </head>
 <body>
   <div class="site">
@@ -125,7 +135,7 @@
       </ol>
 
       <h2>Privacy policy</h2>
-      <p>When you provide personal information to us, we will comply with the New Zealand Privacy Act 2020. Our <a href="/privacy">Privacy Policy</a> explains how we collect, use, disclose and protect your personal information.</p>
+      <p>When you provide personal information to us, we will comply with the New Zealand Privacy Act 2020. Our <a href="/privacy">Privacy Policy</a> explains how we collect, use, disclose and protect your personal information, including how we use cookies and analytics on the Website and how you can control them.</p>
 
       <h2>Suspension and termination</h2>
       <ol>
@@ -149,6 +159,7 @@
       <nav class="footer-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms" class="current">Terms</a>
+        <a href="/privacy#cookies" data-consent-open>Cookies</a>
       </nav>
       <span class="footer-right">© 2026</span>
     </footer>

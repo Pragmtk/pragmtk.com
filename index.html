@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/js/analytics.js"></script>
   <title>Pragmtk</title>
   <meta name="description" content="Pragmtk - Software products. Wellington, New Zealand" />
   <meta name="keywords" content="Pragmtk, Pragmtk Limited, software, saas, apps" />
@@ -35,6 +36,15 @@
         }
       ]
     }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RRSHWZB0J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7RRSHWZB0J');
     </script>
 </head>
 <body>
@@ -87,6 +97,7 @@
       <nav class="footer-links">
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/privacy#cookies" data-consent-open>Cookies</a>
       </nav>
       <span class="footer-right">© 2026</span>
     </footer>

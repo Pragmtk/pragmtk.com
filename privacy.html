@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/js/analytics.js"></script>
   <title>Privacy policy | Pragmtk</title>
   <meta name="description" content="How Pragmtk Limited collects, uses and protects personal information." />
   <link rel="canonical" href="https://pragmtk.com/privacy" />
@@ -10,6 +11,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <link href="./css/style.css" rel="stylesheet" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7RRSHWZB0J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-7RRSHWZB0J');
+  </script>
 </head>
 <body>
   <div class="site">
@@ -58,6 +68,7 @@
       <p>We collect personal information about you from:</p>
       <ul>
         <li>you, when you provide that personal information to us, including via the website and any related service, through any registration or subscription process, through any contact with us (e.g. telephone call or email), or when you buy or use our services and products</li>
+        <li>your device, when you visit the website and have agreed to analytics cookies (see <a href="#cookies">Cookies and analytics</a> below)</li>
         <li>third parties where you have authorised this or the information is publicly available.</li>
       </ul>
       <p>If possible, we will collect personal information from you directly.</p>
@@ -80,6 +91,7 @@
       <p>We may disclose your personal information to:</p>
       <ul>
         <li>any business that supports our services and products, including any person that hosts or maintains any underlying IT system or data centre that we use to provide the website or other services and products</li>
+        <li>Google, which provides the analytics services we use on the website (see <a href="#cookies">Cookies and analytics</a> below)</li>
         <li>other third parties (for anonymised statistical information)</li>
         <li>a person who can require us to supply your personal information (e.g. a regulatory authority)</li>
         <li>any other person authorised by the Act or another law (e.g. a law enforcement agency)</li>
@@ -87,6 +99,12 @@
       </ul>
       <p>A business that supports our services and products may be located outside New Zealand. This may mean your personal information is held and processed outside New Zealand.</p>
       <p>We may transfer your information in the case of a sale, merger, consolidation, liquidation, reorganisation or acquisition.</p>
+
+      <h2 id="cookies">Cookies and analytics</h2>
+      <p>We use Google Tag Manager and Google Analytics, services provided by Google LLC, to understand how people use the website so we can improve it. We use them only to measure use of the website, not for advertising.</p>
+      <p>We only set analytics cookies if you choose <strong>Accept</strong> in the cookie banner. If you accept, Google Analytics sets cookies (named <code>_ga</code> and <code>_ga_</code> followed by an identifier) that last for up to two years and collects information such as the pages you visit, how you arrived at the website, how long you stay, your browser and device type, and your approximate location (derived from your IP address, which Google Analytics does not store). Google processes this information on our behalf, and it may be stored and processed on servers outside New Zealand, including in the United States. Google&rsquo;s use of this information is described at <a href="https://policies.google.com/technologies/partner-sites">policies.google.com/technologies/partner-sites</a>.</p>
+      <p>If you choose <strong>Reject</strong>, or make no choice, no analytics cookies are set. The website uses Google&rsquo;s consent mode, which means Google Tag Manager still loads and may send Google limited information that does not use cookies or identify you, such as that a page was viewed, so we can understand overall use of the website.</p>
+      <p>We store your choice in your browser&rsquo;s local storage so we do not have to ask you again. You can change your choice at any time using the <a href="/privacy#cookies" data-consent-open>Cookies</a> link at the bottom of every page. If you withdraw your consent, we remove the Google Analytics cookies. You can also block or delete cookies in your browser settings, or install the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out browser add-on</a>.</p>
 
       <h2>Protecting your personal information</h2>
       <p>We will take reasonable steps to keep your personal information safe from loss, unauthorised activity, or other misuse.</p>
@@ -110,6 +128,7 @@
       <nav class="footer-links">
         <a href="/privacy" class="current">Privacy</a>
         <a href="/terms">Terms</a>
+        <a href="/privacy#cookies" data-consent-open>Cookies</a>
       </nav>
       <span class="footer-right">© 2026</span>
     </footer>
