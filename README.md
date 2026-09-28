@@ -58,9 +58,9 @@ Upload the whole folder to any static host.
 
 ## Analytics and consent
 
-`js/analytics.js` is loaded at the top of every page's `<head>`. It sets Google Consent Mode v2 defaults (everything denied), loads Google Tag Manager, and shows a cookie banner. Accepting grants `analytics_storage` only; advertising signals always stay denied. The choice is kept in `localStorage` (`pragmtk-consent`) and can be changed from the **Cookies** footer link (any element with `data-consent-open`). Rejecting removes existing `_ga` cookies.
+`js/analytics.js` is loaded at the top of every page's `<head>`. It sets Google Consent Mode v2 defaults (everything denied), loads the GA4 Google tag, and shows a cookie banner. Accepting grants `analytics_storage` only; advertising signals always stay denied. The choice is kept in `localStorage` (`pragmtk-consent`) and can be changed from the **Cookies** footer link (any element with `data-consent-open`). Rejecting removes existing `_ga` cookies.
 
-Set the container ID in `GTM_ID` at the top of `js/analytics.js`. Configure GA4 inside the GTM container (a Google tag with the GA4 measurement ID, firing on *Initialization – All Pages*); don't add a separate `gtag.js` snippet. A `consent_update` event is pushed to the data layer whenever the visitor makes a choice.
+The GA4 measurement ID is `GA_ID` at the top of `js/analytics.js`; don't add Google's `gtag.js` snippet to the pages as well. A `consent_update` event is pushed to the data layer whenever the visitor makes a choice.
 
 ---
 

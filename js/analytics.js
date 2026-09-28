@@ -1,13 +1,13 @@
 /*
- * Google Tag Manager with Google Consent Mode v2.
+ * Google Analytics (GA4 Google tag) with Google Consent Mode v2.
  *
  * Loaded synchronously at the top of <head> so the consent defaults are set
- * before GTM (and the GA4 tag configured inside it) runs. Everything is denied
+ * before the Google tag runs. Everything is denied
  * until the visitor accepts in the cookie banner; their choice is kept in
  * localStorage and can be changed from the "Cookies" link in the footer.
  */
 (function () {
-  const GTM_ID = 'GTM-XXXXXXX';
+  const GA_ID = 'G-7RRSHWZB0J';
   const STORAGE_KEY = 'pragmtk-consent';
 
   window.dataLayer = window.dataLayer || [];
@@ -49,12 +49,13 @@
     gtag('consent', 'update', consentState(stored));
   }
 
-  // Standard GTM loader.
-  window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-  const gtm = document.createElement('script');
-  gtm.async = true;
-  gtm.src = 'https://www.googletagmanager.com/gtm.js?id=' + GTM_ID;
-  document.head.appendChild(gtm);
+  // Google tag (gtag.js).
+  const tag = document.createElement('script');
+  tag.async = true;
+  tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(tag);
+  gtag('js', new Date());
+  gtag('config', GA_ID);
 
   // Remove Google Analytics cookies when consent is withdrawn.
   function clearAnalyticsCookies() {
