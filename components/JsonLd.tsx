@@ -12,6 +12,8 @@ const schema = {
       logo: `${SITE_URL}/favicon.svg`,
       email: 'hello@pragmtk.com',
       description: 'Software products. Pragmatic. Simple.',
+      founder: { '@type': 'Person', name: 'Kyle Beattie', sameAs: 'https://www.linkedin.com/in/kyleabeattie/' },
+      address: { '@type': 'PostalAddress', addressLocality: 'Wellington', addressCountry: 'NZ' },
     },
     {
       '@type': 'WebSite',

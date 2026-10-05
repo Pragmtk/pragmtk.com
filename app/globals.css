@@ -9,10 +9,13 @@
   --color-fg-mid: rgba(232, 228, 219, 0.65);
   --color-border: rgba(232, 228, 219, 0.1);
   --color-accent: #AD5F02;
+  --color-ink: #3D3739;
 
   --color-budj-accent: #01ec99;
   --color-budj-cyan: #00c9ff;
   --color-budj-tangerine: #ffb300;
+
+  --color-kb: #5DCB86;
 }
 
 /* Font files come from next/font (see app/layout.tsx). */

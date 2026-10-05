@@ -1,6 +1,6 @@
 export default function Logo() {
   return (
-    <div className="size-[120px] shrink-0 overflow-hidden">
+    <div className="size-[120px] shrink-0 overflow-hidden mobile:size-20">
       <svg className="size-full" width="276" height="276" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0H276V276H0V0Z" fill="currentColor" />
         <path d="M66 189H86C115.823 189 140 213.177 140 243V243H66V189Z" fill="#3D3739" />

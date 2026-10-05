@@ -16,23 +16,36 @@ export default function HomePage() {
       </h1>
 
       <p className="mb-5 font-mono text-[11px] font-medium tracking-[0.12em] text-fg-dim uppercase">Products</p>
-      <div className="flex max-w-[600px] flex-col gap-0 border-t border-border">
-        <div className="flex items-center justify-between border-b border-border py-5 mobile:flex-col mobile:items-start mobile:gap-2">
-          <Link href="/products" className="flex flex-row gap-4">
-            <BudjLogo className="w-40"/>
-            <div>
-              <div className="font-mono text-[16px] font-medium text-current">budj</div>
-              <p className="text-[14px] font-light text-fg-mid">
-                <strong>Smarter than automatic payments.<br/>Built on your rules.</strong>
-              </p>
-              <p>
-                budj connects to your bank through open banking and runs rules - a trigger and actions - that split money the moment it lands.
-              </p>
-            </div>
-          </Link>
-          <span className="ml-8 font-mono text-[11px] tracking-[0.06em] whitespace-nowrap text-fg-dim uppercase mobile:ml-0">Coming soon for iOS</span>
+      <Link
+        href="/products"
+        className="group grid gap-8 border border-border p-8 font-sans text-[length:inherit] tracking-normal text-fg-mid transition-colors hover:border-fg-dim sm:grid-cols-[auto_1fr] sm:gap-10 mobile:p-6"
+      >
+        <div className="flex size-24 items-center justify-center rounded-[22px] border border-border bg-linear-to-b from-[#1a1919] to-bg">
+          <BudjLogo className="w-11" />
         </div>
-      </div>
+        <div>
+          <div className="mb-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="font-mono text-[18px] font-medium text-fg">budj</span>
+            <span className="border border-border px-3 py-1 font-mono text-[11px] tracking-[0.06em] text-fg-dim uppercase">
+              Coming soon for iPhone
+            </span>
+          </div>
+          <p className="mb-4 max-w-none text-[length:clamp(20px,2.4vw,26px)] leading-[1.3] font-light text-fg">
+            Smarter than automatic payments.
+            <br />
+            Built on your rules.
+          </p>
+          <p className="mb-6 max-w-[560px] text-[15px] leading-[1.6]">
+            budj connects to your bank through open banking and runs rules - a trigger and actions - that split money the moment it lands.
+          </p>
+          <span className="inline-flex items-center gap-2 font-mono text-[13px] tracking-[0.02em] text-fg transition-colors group-hover:text-accent">
+            Learn more
+            <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </span>
+        </div>
+      </Link>
     </main>
   )
 }

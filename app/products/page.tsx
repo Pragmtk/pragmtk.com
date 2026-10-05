@@ -1,6 +1,7 @@
 import BudjLogo from '@/components/BudjLogo'
 import IPhoneFrame from '@/components/IPhoneFrame'
 import { pageMetadata } from '@/lib/metadata'
+import { sectionLabel } from '@/lib/styles'
 import Link from "next/link";
 import AppleDownloadButton from "@/components/AppleDownloadButton";
 
@@ -32,8 +33,6 @@ const features = [
     body: "Ask budj to check your banks for new transactions from Siri or a Shortcut. You can approve a rule's waiting transfers there too - only after confirming what will move, and with Face ID, Touch ID or your passcode every time.",
   },
 ]
-
-const sectionLabel = 'mb-0 font-mono text-[11px] font-medium tracking-[0.12em] text-fg-dim uppercase'
 
 function Question({ question, children }: { question: string; children: React.ReactNode }) {
   return (
@@ -70,13 +69,13 @@ export default function ProductsPage() {
             {/*<AppleDownloadButton />*/}
 
             <p className="mb-8 max-w-[500px] text-[17px] leading-[1.6]">
-              budj will soon be available in the App Store. Sign up for updates and early access at <Link href="https://budj.nz" target="_blank" className="text-accent underline underline-offset-2">budj.nz</Link>.
+              budj will soon be available in the App Store. Sign up for updates and get notified when it launches at <Link href="https://budj.nz" target="_blank" className="text-accent underline underline-offset-2">budj.nz</Link>.
             </p>
           </div>
 
           <div className="relative isolate justify-self-center md:mr-6">
-            <div aria-hidden className="absolute top-1/4 -left-10 -z-10 size-56 rounded-full bg-budj-cyan/20 blur-3xl" />
-            <div aria-hidden className="absolute -right-10 bottom-1/4 -z-10 size-56 rounded-full bg-budj-accent/15 blur-3xl" />
+            <div aria-hidden className="absolute top-1/4 -left-10 -z-10 mobile:left-0 size-56 rounded-full bg-budj-cyan/20 blur-3xl" />
+            <div aria-hidden className="absolute -right-10 bottom-1/4 -z-10 mobile:right-0 size-56 rounded-full bg-budj-accent/15 blur-3xl" />
             <IPhoneFrame>
               <div className="flex size-full items-center justify-center bg-radial-[at_50%_45%] from-budj-cyan/10 to-transparent to-70%">
                 <BudjLogo className="w-24" />
@@ -155,6 +154,15 @@ export default function ProductsPage() {
                 budj reads your balances and transactions when a rule checks them and keeps neither, and it never stores an account number. What it does keep about your bank accounts is what it needs to know which ones your rules can use, such as each account’s name and type. Deleting your account in the app removes what was stored, with one narrow exception for a payment already on its way.
               </p>
             </Question>
+          </div>
+        </section>
+
+        <section className="mt-24 mb-0 grid gap-10 border-t border-border pt-12 md:grid-cols-[2fr_3fr] md:gap-16">
+          <h3 className={sectionLabel}>Find out when it launches</h3>
+          <div className="text-[16px] leading-[1.7]">
+            <p>
+              Find out when budj launches at <Link href="https://budj.nz/"  className="text-accent underline underline-offset-2">budj.nz</Link>
+            </p>
           </div>
         </section>
       </article>
