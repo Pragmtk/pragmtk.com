@@ -1,63 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="/js/analytics.js"></script>
-  <title>Terms of use | Pragmtk</title>
-  <meta name="description" content="Terms of use for the Pragmtk website." />
-  <link rel="canonical" href="https://pragmtk.com/terms" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <meta name="theme-color" content="#0E0D0D" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Pragmtk" />
-  <meta property="og:title" content="Terms of use | Pragmtk" />
-  <meta property="og:description" content="Terms of use for the Pragmtk website." />
-  <meta property="og:url" content="https://pragmtk.com/terms" />
-  <meta property="og:image" content="https://pragmtk.com/logo-pragmtk.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Pragmtk logo" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link href="./css/style.css" rel="stylesheet" />
-</head>
-<body>
-  <div class="site">
-    <header class="header">
-      <div class="logo-wrap">
-        <a href="/" class="logo-mark" aria-label="Pragmtk home">
-          <svg width="276" height="276" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0H276V276H0V0Z" fill="#E8E4DB"/>
-            <path d="M66 189H86C115.823 189 140 213.177 140 243V243H66V189Z" fill="#3D3739"/>
-            <path d="M66.0006 32C164.667 32 164.666 189 66 189L66.0006 32Z" fill="#3D3739"/>
-            <mask id="mask0_2624_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="140" y="32" width="45" height="157">
-              <rect x="140" y="32" width="45" height="157" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_2624_60)">
-              <path d="M110.001 32C208.667 32 208.666 189 110 189L110.001 32Z" fill="#3D3739"/>
-            </g>
-            <mask id="mask1_2624_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="184" y="32" width="25" height="157">
-              <rect x="184" y="32" width="25" height="157" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask1_2624_60)">
-              <path d="M134.001 32C232.667 32 232.666 189 134 189L134.001 32Z" fill="#3D3739"/>
-            </g>
-          </svg>
-        </a>
-      </div>
-      <div class="header-inner">
-        <a href="/" class="logo-name" aria-label="Pragmtk home">Pragmtk</a>
-        <a href="mailto:hello@pragmtk.com" class="contact-link">hello@pragmtk.com</a>
-      </div>
-    </header>
+import Link from 'next/link'
+import LegalPage from '@/components/LegalPage'
+import { pageMetadata } from '@/lib/metadata'
 
-    <main class="legal numbered">
+export const metadata = pageMetadata({
+  title: 'Terms of use | Pragmtk',
+  description: 'Terms of use for the Pragmtk website.',
+  path: '/terms',
+})
+
+export default function TermsPage() {
+  return (
+    <LegalPage numbered>
       <h1>Website terms of use</h1>
-      <p class="updated">Last updated 28 September 2026</p>
+      <p className="mb-12! font-mono text-[12px]! text-fg-dim!">Last updated 28 September 2026</p>
 
       <h2>Application of terms</h2>
       <ol>
@@ -139,7 +94,7 @@
       </ol>
 
       <h2>Privacy policy</h2>
-      <p>When you provide personal information to us, we will comply with the New Zealand Privacy Act 2020. Our <a href="/privacy">Privacy Policy</a> explains how we collect, use, disclose and protect your personal information, including how we use cookies and analytics on the Website and how you can control them.</p>
+      <p>When you provide personal information to us, we will comply with the New Zealand Privacy Act 2020. Our <Link href="/privacy">Privacy Policy</Link> explains how we collect, use, disclose and protect your personal information, including how we use cookies and analytics on the Website and how you can control them.</p>
 
       <h2>Suspension and termination</h2>
       <ol>
@@ -156,17 +111,6 @@
         <li>If any part or provision of these Terms is or becomes illegal, unenforceable, or invalid, that part or provision is deemed to be modified to the extent required to remedy the illegality, unenforceability or invalidity. If a modification is not possible, the part or provision must be treated for all purposes as severed from these Terms. The remainder of these Terms will be binding on you.</li>
         <li>These Terms set out everything agreed by the parties relating to your use of the Website and supersede and cancel anything discussed, exchanged or agreed prior to you agreeing to these Terms. The parties have not relied on any representation, warranty or agreement relating to the Website that is not expressly set out in the Terms, and no such representation, warranty or agreement has any effect from the date you agreed to these Terms.</li>
       </ol>
-    </main>
-
-    <footer class="footer">
-      <span class="footer-left">Pragmtk Ltd - Wellington, New Zealand</span>
-      <nav class="footer-links">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms" class="current">Terms</a>
-        <a href="/privacy#cookies" data-consent-open>Cookies</a>
-      </nav>
-      <span class="footer-right">© 2026</span>
-    </footer>
-  </div>
-</body>
-</html>
+    </LegalPage>
+  )
+}

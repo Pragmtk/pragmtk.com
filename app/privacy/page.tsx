@@ -1,63 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="/js/analytics.js"></script>
-  <title>Privacy policy | Pragmtk</title>
-  <meta name="description" content="How Pragmtk Limited collects, uses and protects personal information." />
-  <link rel="canonical" href="https://pragmtk.com/privacy" />
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <meta name="theme-color" content="#0E0D0D" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Pragmtk" />
-  <meta property="og:title" content="Privacy policy | Pragmtk" />
-  <meta property="og:description" content="How Pragmtk Limited collects, uses and protects personal information." />
-  <meta property="og:url" content="https://pragmtk.com/privacy" />
-  <meta property="og:image" content="https://pragmtk.com/logo-pragmtk.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Pragmtk logo" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link href="./css/style.css" rel="stylesheet" />
-</head>
-<body>
-  <div class="site">
-    <header class="header">
-      <div class="logo-wrap">
-        <a href="/" class="logo-mark" aria-label="Pragmtk home">
-          <svg width="276" height="276" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0H276V276H0V0Z" fill="#E8E4DB"/>
-            <path d="M66 189H86C115.823 189 140 213.177 140 243V243H66V189Z" fill="#3D3739"/>
-            <path d="M66.0006 32C164.667 32 164.666 189 66 189L66.0006 32Z" fill="#3D3739"/>
-            <mask id="mask0_2624_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="140" y="32" width="45" height="157">
-              <rect x="140" y="32" width="45" height="157" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_2624_60)">
-              <path d="M110.001 32C208.667 32 208.666 189 110 189L110.001 32Z" fill="#3D3739"/>
-            </g>
-            <mask id="mask1_2624_60" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="184" y="32" width="25" height="157">
-              <rect x="184" y="32" width="25" height="157" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask1_2624_60)">
-              <path d="M134.001 32C232.667 32 232.666 189 134 189L134.001 32Z" fill="#3D3739"/>
-            </g>
-          </svg>
-        </a>
-      </div>
-      <div class="header-inner">
-        <a href="/" class="logo-name" aria-label="Pragmtk home">Pragmtk</a>
-        <a href="mailto:hello@pragmtk.com" class="contact-link">hello@pragmtk.com</a>
-      </div>
-    </header>
+import LegalPage from '@/components/LegalPage'
+import { pageMetadata } from '@/lib/metadata'
 
-    <main class="legal">
+export const metadata = pageMetadata({
+  title: 'Privacy policy | Pragmtk',
+  description: 'How Pragmtk Limited collects, uses and protects personal information.',
+  path: '/privacy',
+})
+
+export default function PrivacyPage() {
+  return (
+    <LegalPage>
       <h1>Privacy policy</h1>
-      <p class="updated">Last updated 28 September 2026</p>
+      <p className="mb-12! font-mono text-[12px]! text-fg-dim!">Last updated 28 September 2026</p>
 
       <h2>Introduction</h2>
       <p>Pragmtk Limited (<strong>we</strong>, <strong>us</strong>, <strong>our</strong>) complies with the New Zealand Privacy Act 2020 (the <strong>Act</strong>) when dealing with personal information. Personal information is information about an identifiable individual (a natural person).</p>
@@ -125,17 +79,6 @@
 
       <h2>Contacting us</h2>
       <p>If you have any questions about this privacy policy, our privacy practices, or if you would like to request access to, or correction of, your personal information, you can contact us at <a href="mailto:hello@pragmtk.com">hello@pragmtk.com</a>.</p>
-    </main>
-
-    <footer class="footer">
-      <span class="footer-left">Pragmtk Ltd - Wellington, New Zealand</span>
-      <nav class="footer-links">
-        <a href="/privacy" class="current">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/privacy#cookies" data-consent-open>Cookies</a>
-      </nav>
-      <span class="footer-right">© 2026</span>
-    </footer>
-  </div>
-</body>
-</html>
+    </LegalPage>
+  )
+}

@@ -11,3 +11,8 @@ npm-debug.log*
 .DS_Store
 .vscode/
 .idea/
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo

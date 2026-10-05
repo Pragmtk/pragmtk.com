@@ -28,21 +28,28 @@ The landing page for **Pragmtk Limited**.
 
 ## Overview
 
-The site is two static pages, `index.html` (the home page: the studio, its products and contact details) and `privacy.html` (the privacy policy). There is no build step, framework or dependency.
+A [Next.js](https://nextjs.org) (App Router) site styled with [Tailwind CSS](https://tailwindcss.com) v4, statically exported and hosted on GitHub Pages.
 
-- `css/site.css` – shared styles for both pages.
-- `js/hover-effect.js` – the home page's hover effect: hovering one of the large words shows an image that follows the cursor with an RGB-shift distortion (plain WebGL). A word with `data-image` shows that image (Budj uses `img/budj.jpg`, a greyscale app screenshot); one with `data-art` shows artwork drawn in code in the brand colours (Bateleur, until it has a screenshot). The effect is skipped on touch screens and when reduced motion is requested.
-- `fonts/` – [Le Murmure](https://velvetyne.fr/fonts/le-murmure/) by Jérémy Landes / Velvetyne, used under the SIL Open Font License (`fonts/LeMurmure-OFL.txt`).
+- `app/` – one folder per page (`page.tsx`), plus the root `layout.tsx` (fonts, shared header/footer, analytics), `globals.css` (Tailwind theme and element defaults), `sitemap.ts` and `robots.ts`.
+- `components/` – `Header`, `Footer`, `Navigation` (marks the current page's link), `Logo`, `BudjLogo`, `LegalPage` (typography and clause numbering for the privacy and terms pages), `CookieConsent`, `Analytics` and `JsonLd`.
+- `lib/site.ts` – site URL and the primary and footer navigation links.
+- `lib/metadata.ts` – `pageMetadata()` builds each page's title, description, canonical URL and Open Graph tags.
+- `lib/consent.ts` – Google Analytics consent logic.
+- `public/` – files served as-is: favicons, the Open Graph image and `CNAME`.
+- `app/fonts/` – Metaor Aftershift (the wordmark). IBM Plex Sans and Mono are self-hosted at build time via `next/font`.
 
 ## Running locally
 
-Serve the folder with Node.js (the pages use root-relative paths, so opening the file directly won't load the styles):
-
 ```sh
-npx serve -l 8000
+pnpm install
+pnpm dev
 ```
 
-Then visit <http://localhost:8000>.
+Then visit <http://localhost:3000>. To check the production export, run `pnpm build` (writes `out/`) then `pnpm start` to serve it at <http://localhost:8000>.
+
+## Styling
+
+Styles are Tailwind utility classes in the markup. The colours and fonts are theme variables in `app/globals.css` (`--color-bg`, `--color-fg`, `--color-fg-mid`, `--color-fg-dim`, `--color-border`, `--color-accent`, `--color-budj-*`, `--font-sans`, `--font-mono`, `--font-display`), so they're available as utilities like `text-fg-mid`, `border-border` or `font-display`. `mobile:` is a custom variant for screens 600px wide and below.
 
 ## Brand colours
 
@@ -54,13 +61,13 @@ Then visit <http://localhost:8000>.
 
 ## Deployment
 
-Upload the whole folder to any static host.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the static export and deploys `out/` to GitHub Pages. The repository's Pages source must be set to **GitHub Actions** (Settings → Pages).
 
 ## Analytics and consent
 
-`js/analytics.js` is loaded at the top of every page's `<head>`. It sets Google Consent Mode v2 defaults (everything denied), loads the GA4 Google tag, and shows a cookie banner. Accepting grants `analytics_storage` only; advertising signals always stay denied. The choice is kept in `localStorage` (`pragmtk-consent`) and can be changed from the **Cookies** footer link (any element with `data-consent-open`). Rejecting removes existing `_ga` cookies.
+`components/Analytics.tsx` runs an inline script at the top of `<head>` that sets Google Consent Mode v2 defaults (everything denied), then loads the GA4 Google tag. `components/CookieConsent.tsx` shows the cookie banner. Accepting grants `analytics_storage` only; advertising signals always stay denied. The choice is kept in `localStorage` (`pragmtk-consent`) and can be changed from the **Cookies** footer link (any element with `data-consent-open`). Rejecting removes existing `_ga` cookies.
 
-The GA4 measurement ID is `GA_ID` at the top of `js/analytics.js`; don't add Google's `gtag.js` snippet to the pages as well. A `consent_update` event is pushed to the data layer whenever the visitor makes a choice.
+The GA4 measurement ID is `GA_ID` in `lib/consent.ts`; don't add Google's `gtag.js` snippet to the pages as well. A `consent_update` event is pushed to the data layer whenever the visitor makes a choice.
 
 ---
 

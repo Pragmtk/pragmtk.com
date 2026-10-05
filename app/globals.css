@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+@custom-variant mobile (@media (max-width: 600px));
+
+@theme {
+  --color-bg: #0E0D0D;
+  --color-fg: #E8E4DB;
+  --color-fg-dim: rgba(232, 228, 219, 0.4);
+  --color-fg-mid: rgba(232, 228, 219, 0.65);
+  --color-border: rgba(232, 228, 219, 0.1);
+  --color-accent: #AD5F02;
+  --color-ink: #3D3739;
+
+  --color-budj-accent: #01ec99;
+  --color-budj-cyan: #00c9ff;
+  --color-budj-tangerine: #ffb300;
+
+  --color-kb: #5DCB86;
+}
+
+/* Font files come from next/font (see app/layout.tsx). */
+@theme inline {
+  --font-sans: var(--font-plex-sans), sans-serif;
+  --font-mono: var(--font-plex-mono), monospace;
+  --font-display: var(--font-metaor), serif;
+}
+
+/* Element defaults; utilities in the markup override these. */
+@layer base {
+  a {
+    @apply font-mono text-[13px] tracking-[0.02em] text-fg-mid no-underline transition-[color] duration-300 ease-in-out;
+  }
+
+  a:hover {
+    @apply text-accent;
+  }
+
+  h2 {
+    @apply mb-5 font-mono text-[11px] font-medium tracking-[0.12em] text-fg-dim uppercase;
+  }
+
+  /* Browser defaults that Tailwind's preflight resets. */
+  h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  code {
+    font-family: monospace;
+  }
+
+  p {
+    @apply mb-4 max-w-[640px] text-fg-mid;
+  }
+
+  section {
+    @apply mb-14;
+  }
+}
