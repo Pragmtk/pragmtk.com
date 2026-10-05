@@ -26,7 +26,7 @@ export default function HomePage() {
                 <strong>Smarter than automatic payments.<br/>Built on your rules.</strong>
               </p>
               <p>
-                budj connects to your bank through open banking and runs rules - a trigger and an action - that split money the moment it lands.
+                budj connects to your bank through open banking and runs rules - a trigger and actions - that split money the moment it lands.
               </p>
             </div>
           </Link>
