@@ -1,0 +1,23 @@
+export default function Logo() {
+  return (
+    <div className="size-[120px] shrink-0 overflow-hidden">
+      <svg className="size-full" width="276" height="276" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H276V276H0V0Z" fill="currentColor" />
+        <path d="M66 189H86C115.823 189 140 213.177 140 243V243H66V189Z" fill="#3D3739" />
+        <path d="M66.0006 32C164.667 32 164.666 189 66 189L66.0006 32Z" fill="#3D3739" />
+        <mask id="mask0_2624_60" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="140" y="32" width="45" height="157">
+          <rect x="140" y="32" width="45" height="157" fill="#D9D9D9" />
+        </mask>
+        <g mask="url(#mask0_2624_60)">
+          <path d="M110.001 32C208.667 32 208.666 189 110 189L110.001 32Z" fill="#3D3739" />
+        </g>
+        <mask id="mask1_2624_60" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="184" y="32" width="25" height="157">
+          <rect x="184" y="32" width="25" height="157" fill="#D9D9D9" />
+        </mask>
+        <g mask="url(#mask1_2624_60)">
+          <path d="M134.001 32C232.667 32 232.666 189 134 189L134.001 32Z" fill="#3D3739" />
+        </g>
+      </svg>
+    </div>
+  )
+}
